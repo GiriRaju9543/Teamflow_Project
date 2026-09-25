@@ -1,0 +1,44 @@
+/* A restrained palette: teal, blue, violet and warm terracotta. */
+.board-stats{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.board-stats .stat{position:relative;overflow:hidden;padding:12px 14px;border-color:#dce5e2;box-shadow:0 3px 12px #17323805}
+.board-stats .stat:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--accent,#236f64)}
+.board-stats .stat strong{color:var(--accent,#236f64)}
+.board-stats .todo{--accent:#60768d}.board-stats .progress{--accent:#287ba1}.board-stats .review{--accent:#7960a6}.board-stats .done{--accent:#267c5e}.board-stats .overdue{--accent:#ac553a}
+.board-five{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start}
+.board-five .column{min-width:0;border-top:3px solid #90a0ad;background:#eef2f4;padding:10px;min-height:180px}
+.board-five .column.progress{background:#eaf3f7;border-color:#d7e7ee;border-top-color:#458ca9}
+.board-five .column.review{background:#f0edf8;border-top-color:#9782b8}
+.board-five .column.done{background:#e9f3ed;border-top-color:#5a9a7d}
+.board-five .column.changes{background:#fcf0e9;border-color:#eeded3;border-top-color:#c48158}
+.column.changes .column-head i{background:#b57147}.column.progress .column-head i{background:#458ca9}
+.board-five .column-head{min-height:30px;margin-bottom:10px}.board-five .column-head h2{line-height:1.4}
+.board-five .task-card{padding:12px;box-shadow:0 3px 8px #17323806;transition:border-color .15s,box-shadow .15s}
+.board-five .task-card:hover{border-color:#9bbeb0;box-shadow:0 5px 14px #1732380d}
+.badge.changes{background:#f9e5d7;color:#8c482a}
+.correction-button{background:#a45735;border-color:#a45735}.correction-button:hover{background:#874127}
+@media(max-width:1400px){.board-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.board-five{display:flex;overflow-x:auto;padding-bottom:16px;scroll-snap-type:x proximity}.board-five .column{flex:0 0 245px;scroll-snap-align:start}.board-stats .stat small{display:block}}
+@media(max-width:760px){.board-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.board-stats .stat{padding:16px}.board-five .column{flex-basis:265px}.sidebar-bottom{display:block;margin-top:15px;padding-top:12px}.sidebar-bottom .account{display:none}}
+@media(prefers-reduced-motion:reduce){.board-five .task-card{transition:none}}
+
+/* Compact cards keep the full description available on the task detail page. */
+.board-stats{margin-bottom:20px}
+.board-stats .stat strong{font-size:1.8rem;line-height:1.3;margin:3px 0}
+.board-five .cards{gap:10px}
+.board-five .card-top{margin-bottom:6px}
+.board-five .task-card h3{font-size:.9rem;line-height:1.4;margin-bottom:7px}
+.board-five .task-card>p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;line-height:1.45;margin-bottom:10px}
+.board-five .card-person{font-size:.75rem}
+.board-five .avatar.small{width:24px;height:24px}
+.board-five .card-foot{margin-top:10px;padding-top:8px}
+.board-five .column-empty{padding:18px 6px}
+.board-five .column-empty>span{font-size:1.3rem}
+.board-five .column-empty p{margin:4px 0 0}
+@media(max-width:1400px){.board-five .column{flex-basis:230px}}
+
+/* Bound both the rendered task count and the column height. */
+.board-five .cards{max-height:420px;max-height:clamp(220px,48vh,420px);overflow-y:auto;align-content:start;overscroll-behavior-y:contain;scrollbar-width:thin;padding-right:3px}
+.board-five .cards:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.board-five .task-card>p{display:none}
+.board-five .column-pages{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:.75rem;flex-wrap:wrap}
+.column-pages a{padding:8px 2px;color:var(--teal)}
+.report-table-wrap{overflow-x:auto}.report-table{border-collapse:collapse;width:100%;font-size:.875rem;text-align:left}.report-table th,.report-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.report-table th{color:var(--muted);font-weight:600}.report-table td:first-child{min-width:180px;overflow-wrap:anywhere}.report-pagination{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:16px;font-size:.875rem}

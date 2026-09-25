@@ -1,0 +1,34 @@
+# .venv/
+# .local/
+# .static/
+# __pycache__/
+# *.py[cod]
+# .env
+# *.sqlite3
+
+# Python environments
+.venv/
+.venv-old/
+venv/
+
+# Local data, credentials, backups and previews
+.local/
+
+# Collected static files and Python caches
+.static/
+__pycache__/
+*.py[cod]
+
+# Private environment settings
+.env
+.env.*
+!.env.example
+
+# Local database files
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+
+# Local logs
+*.log
